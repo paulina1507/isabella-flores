@@ -1,0 +1,267 @@
+{
+  "schema_version": 1,
+  "slug": "xv-isabella-2026",
+  "template": "xv-arco-princess",
+  "tipo_evento": "xv",
+  "paquete": "armonia",
+  "evento": {
+    "fecha": "2026-08-01T17:00:00",
+    "host": {
+      "nombre": "Isabella Flores"
+    }
+  },
+  "meta": {
+    "title": "Mis XV Años | Isabella Flores",
+    "description": "Acompáñanos a celebrar mis XV años",
+    "lang": "es",
+    "favicon": "favicon.ico"
+  },
+
+  "logo": {
+    "type": "text",
+    "value": "Mis XV Años"
+  },
+  "media": {
+    "hero_background": "quinceañera2.png",
+    "presentacion": "princesa.svg",
+    "vestimenta_icon": "9.svg",
+    "galeria": ["gallery1.png", "gallery2.png", "gallery3.png", "gallery4.png"]
+  },
+  "audio": {
+    "enabled": true,
+    "src": "cancion.mp3",
+    "autoplay_on_open": true,
+    "loop": true,
+    "volume": 1,
+    "fade_in": true,
+    "icons": {
+      "play": "play.svg",
+      "pause": "pause.svg"
+    }
+  },
+
+  "opening": {
+    "enabled": true,
+    "phrase": {
+      "enabled": true,
+      "text": "Con mucha ilusión…",
+      "duration": 1400
+    },
+    "particles": {
+      "enabled": true,
+      "type": "sparkles",
+      "count": 14
+    },
+    "scroll_hint": {
+      "enabled": true,
+      "text": "Desliza para continuar"
+    }
+  },
+
+  "navbar": {
+    "enabled": true,
+    "logo": {
+      "use_global": true
+    },
+    "items": [
+      { "id": "inicio", "label": "Inicio", "href": "#inicio" },
+      { "id": "ubicacion", "label": "Lugar", "href": "#ubicacion" },
+      { "id": "programa", "label": "Programa", "href": "#programa" },
+      { "id": "regalos", "label": "Regalos", "href": "#regalos" },
+      { "id": "vestimenta", "label": "Vestimenta", "href": "#vestimenta" },
+      { "id": "galeria", "label": "Galería", "href": "#galeria" },
+      { "id": "rsvp", "label": "Asistencia", "href": "#rsvp" }
+    ]
+  },
+
+  "hero": {
+    "enabled": true,
+    "names": {
+      "festejada": "XV Años Isabella Flores"
+    },
+    "countdown_labels": {
+      "dias": "Días",
+      "horas": "Horas",
+      "minutos": "Minutos",
+      "segundos": "Segundos"
+    }
+  },
+
+  "presentacion": {
+    "enabled": true,
+    "titulo": "Tengo el honor de invitarte a celebrar mis XV años",
+    "nombres": "ISABELLA FLORES",
+    "frase": "Gracias, Señor, por guiar mis pasos y llenar mi vida de luz en estos 15 años.",
+    "padres": {
+      "festejada": ["PATRICIA TORRES", "JASON FLORES"]
+    },
+    "padrinos": ["MARLENE GUILLÉN", "LUIS GUILLÉN"],
+    "texto_final": "Se viene un día especial y quiero que estés ahí… ¡mis quince años no serían lo mismo sin ti!",
+    "labels": {
+      "padres": "Mis Padres",
+      "padrinos": "Mi Padrinos"
+    }
+  },
+
+  "ubicacion": {
+    "enabled": true,
+    "titulo": "Ubicación",
+    "lugares": [
+      {
+        "enabled": true,
+        "tipo": "Ceremonia Religiosa",
+        "hora": "12:00 PM",
+        "lugar": "Our Lady of Guadalupe Church",
+        "direccion": ["5048 D St, Chino, CA 91710, Estados Unidos"],
+        "mapa": "https://maps.app.goo.gl/Zbm7Dzk72pQy9Qsz5"
+      },
+      {
+        "enabled": true,
+        "tipo": "Recepción",
+        "hora": "19:30 HRS",
+        "lugar": "London Garden",
+        "direccion": [
+          "12125 Day St Suite #B-210,",
+          "Moreno Valley, CA 92557,",
+          "Estados Unidos"
+        ],
+        "mapa": "https://maps.app.goo.gl/iER7vWbFmfPyyWsV9"
+      }
+    ]
+  },
+
+  "programa": {
+    "enabled": true,
+    "titulo": "Programa del Evento",
+    "progress_steps": [20, 40, 60, 80, 100],
+    "items": [
+      {
+        "hora": "12:00 PM",
+        "texto": "Ceremonia Religiosa",
+        "icono": "5.svg",
+        "lado": "left"
+      },
+      {
+        "hora": "05:00 PM - 07:00 PM",
+        "texto": "Comida",
+        "icono": "7.svg",
+        "lado": "right"
+      },
+      {
+        "hora": "07:00 PM - 08:00 PM",
+        "texto": "Vals",
+        "icono": "8.svg",
+        "lado": "right"
+      },
+      {
+        "hora": "08:00 PM",
+        "texto": "Baile",
+        "icono": "1.svg",
+        "lado": "left"
+      }
+    ]
+  },
+
+  "vestimenta": {
+    "enabled": true,
+    "titulo": "Código de Vestimenta",
+    "formal": "FORMAL",
+    "labels": {
+      "mujeres": "",
+      "hombres": ""
+    },
+    "mujeres": "",
+    "hombres": "El color rojo se reserva para la quinceañera"
+  },
+
+  "regalos": {
+    "enabled": true,
+    "titulo": "Sugerencia de Regalos",
+    "descripcion": "Tu presencia es el mejor regalo.<br>Si deseas obsequiarme algo, habrá una mesa de regalos en la fiesta.",
+    "items": [
+      {
+        "icono": "10.svg",
+        "label": "Lluvia de sobres"
+      }
+    ]
+  },
+
+  "galeria": {
+    "enabled": false,
+    "titulo": "Galería"
+  },
+
+  "rsvp": {
+    "enabled": false,
+    "mode": "panel",
+
+    "telefono": "522212576641",
+    "mensaje_base": "Hola, confirmo mi asistencia a los XV años de Isabella Flores.",
+    "fecha_limite": "2026-04-15",
+
+    "qr": { "enabled": false },
+
+    "titulo": "Confirmar asistencia",
+    "texto": "Por favor confirma tu asistencia",
+    "nota": "Te agradeceremos confirmar tu asistencia antes del {{fecha_limite}}.",
+
+    "pase": {
+      "enabled": true,
+      "label": "Pase para"
+    },
+
+    "mesa": {
+      "enabled": false,
+      "label": "Mesa"
+    },
+
+    "botones": {
+      "si": "Sí, asistiré",
+      "no": "No podré asistir"
+    },
+
+    "final": {
+      "titulo": "¡Gracias por confirmar!",
+      "texto": "Hemos reservado estos lugares en su honor.",
+      "firma": "XV Años Isabella Flores"
+    }
+  },
+  "editorial": {
+    "hero": {
+      "enabled": true,
+      "text": "Hoy celebro una nueva etapa en mi vida"
+    },
+    "presentacion": {
+      "enabled": true,
+      "text": "Gracias a quienes me han acompañado siempre"
+    },
+    "ubicacion": {
+      "enabled": true,
+      "text": "El lugar donde todo sucederá"
+    },
+    "programa": {
+      "enabled": true,
+      "text": "Cada momento tiene su magia"
+    },
+    "vestimenta": {
+      "enabled": true,
+      "text": "Una noche para brillar"
+    },
+    "regalos": {
+      "enabled": true,
+      "text": "Tu compañía es lo más importante"
+    },
+    "galeria": {
+      "enabled": true,
+      "text": "Momentos que forman mi historia"
+    },
+    "rsvp": {
+      "enabled": true,
+      "text": "Acompáñanos en este día especial"
+    }
+  },
+  "footer": {
+    "enabled": true,
+    "text": "Diseñado con amor por"
+  }
+}
