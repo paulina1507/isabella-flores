@@ -16,20 +16,25 @@
     "lang": "es",
     "favicon": "favicon.ico"
   },
-
   "logo": {
     "type": "text",
     "value": "Mis XV Años"
   },
   "media": {
-    "hero_background": "quinceañera2.png",
+    "hero_background": "hero.png",
     "presentacion": "princesa.svg",
     "vestimenta_icon": "9.svg",
-    "galeria": ["gallery1.png", "gallery2.png", "gallery3.png", "gallery4.png"]
+    "galeria": [
+      "2.jpg",
+      "4.jpg",
+      "bg-xv.jpg",
+      "hero.png",
+      "countdown.png"
+    ]
   },
   "audio": {
     "enabled": true,
-    "src": "cancion.mp3",
+    "src": "musica.mp3",
     "autoplay_on_open": true,
     "loop": true,
     "volume": 1,
@@ -39,7 +44,6 @@
       "pause": "pause.svg"
     }
   },
-
   "opening": {
     "enabled": true,
     "phrase": {
@@ -57,27 +61,53 @@
       "text": "Desliza para continuar"
     }
   },
-
   "navbar": {
     "enabled": true,
     "logo": {
       "use_global": true
     },
     "items": [
-      { "id": "inicio", "label": "Inicio", "href": "#inicio" },
-      { "id": "ubicacion", "label": "Lugar", "href": "#ubicacion" },
-      { "id": "programa", "label": "Programa", "href": "#programa" },
-      { "id": "regalos", "label": "Regalos", "href": "#regalos" },
-      { "id": "vestimenta", "label": "Vestimenta", "href": "#vestimenta" },
-      { "id": "galeria", "label": "Galería", "href": "#galeria" },
-      { "id": "rsvp", "label": "Asistencia", "href": "#rsvp" }
+      {
+        "id": "inicio",
+        "label": "Inicio",
+        "href": "#inicio"
+      },
+      {
+        "id": "ubicacion",
+        "label": "Lugar",
+        "href": "#ubicacion"
+      },
+      {
+        "id": "programa",
+        "label": "Programa",
+        "href": "#programa"
+      },
+      {
+        "id": "regalos",
+        "label": "Regalos",
+        "href": "#regalos"
+      },
+      {
+        "id": "vestimenta",
+        "label": "Vestimenta",
+        "href": "#vestimenta"
+      },
+      {
+        "id": "galeria",
+        "label": "Galería",
+        "href": "#galeria"
+      },
+      {
+        "id": "rsvp",
+        "label": "Asistencia",
+        "href": "#rsvp"
+      }
     ]
   },
-
   "hero": {
     "enabled": true,
     "names": {
-      "festejada": "XV Años Isabella Flores"
+      "festejada": "Isabella"
     },
     "countdown_labels": {
       "dias": "Días",
@@ -86,23 +116,36 @@
       "segundos": "Segundos"
     }
   },
-
+  "intro_musical": {
+    "enabled": true,
+    "title": "XV Años",
+    "subtitle": "Presiona el ▶ para escuchar la canción",
+    "message": [
+      "Gracias a mis papás y a mi hermana por su amor incondicional y a todas las personas que han sido parte de mi camino.",
+      "Con gratitud en el corazón, los invito a celebrar mis XV años."
+    ]
+  },
   "presentacion": {
     "enabled": true,
     "titulo": "Tengo el honor de invitarte a celebrar mis XV años",
     "nombres": "ISABELLA FLORES",
     "frase": "Gracias, Señor, por guiar mis pasos y llenar mi vida de luz en estos 15 años.",
     "padres": {
-      "festejada": ["PATRICIA TORRES", "JASON FLORES"]
+      "festejada": [
+        "PATRICIA TORRES",
+        "JASON FLORES"
+      ]
     },
-    "padrinos": ["MARLENE GUILLÉN", "LUIS GUILLÉN"],
+    "padrinos": [
+      "MARLENE GUILLÉN",
+      "LUIS GUILLÉN"
+    ],
     "texto_final": "Se viene un día especial y quiero que estés ahí… ¡mis quince años no serían lo mismo sin ti!",
     "labels": {
       "padres": "Mis Padres",
-      "padrinos": "Mi Padrinos"
+      "padrinos": "Mis Padrinos"
     }
   },
-
   "ubicacion": {
     "enabled": true,
     "titulo": "Ubicación",
@@ -112,14 +155,18 @@
         "tipo": "Ceremonia Religiosa",
         "hora": "12:00 PM",
         "lugar": "Our Lady of Guadalupe Church",
-        "direccion": ["5048 D St, Chino, CA 91710, Estados Unidos"],
+        "imagen": "ceremonia.png",
+        "direccion": [
+          "5048 D St, Chino, CA 91710, Estados Unidos"
+        ],
         "mapa": "https://maps.app.goo.gl/Zbm7Dzk72pQy9Qsz5"
       },
       {
         "enabled": true,
         "tipo": "Recepción",
-        "hora": "19:30 HRS",
+        "hora": "05:00 PM",
         "lugar": "London Garden",
+        "imagen": "recepcion.jpg",
         "direccion": [
           "12125 Day St Suite #B-210,",
           "Moreno Valley, CA 92557,",
@@ -129,11 +176,16 @@
       }
     ]
   },
-
   "programa": {
     "enabled": true,
     "titulo": "Programa del Evento",
-    "progress_steps": [20, 40, 60, 80, 100],
+    "progress_steps": [
+      20,
+      40,
+      60,
+      80,
+      100
+    ],
     "items": [
       {
         "hora": "12:00 PM",
@@ -161,7 +213,6 @@
       }
     ]
   },
-
   "vestimenta": {
     "enabled": true,
     "titulo": "Código de Vestimenta",
@@ -173,11 +224,10 @@
     "mujeres": "",
     "hombres": "El color rojo se reserva para la quinceañera"
   },
-
   "regalos": {
     "enabled": true,
     "titulo": "Sugerencia de Regalos",
-    "descripcion": "Tu presencia es el mejor regalo.<br>Si deseas obsequiarme algo, habrá una mesa de regalos en la fiesta.",
+    "descripcion": "Tu presencia es el mejor regalo.<br>Si deseas tener un detalle conmigo, agradezco lluvia de sobres.",
     "items": [
       {
         "icono": "10.svg",
@@ -185,41 +235,34 @@
       }
     ]
   },
-
   "galeria": {
-    "enabled": false,
+    "enabled": true,
     "titulo": "Galería"
   },
-
   "rsvp": {
-    "enabled": false,
+    "enabled": true,
     "mode": "panel",
-
     "telefono": "522212576641",
     "mensaje_base": "Hola, confirmo mi asistencia a los XV años de Isabella Flores.",
-    "fecha_limite": "2026-04-15",
-
-    "qr": { "enabled": false },
-
+    "fecha_limite": "2026-07-15",
+    "qr": {
+      "enabled": true
+    },
     "titulo": "Confirmar asistencia",
     "texto": "Por favor confirma tu asistencia",
     "nota": "Te agradeceremos confirmar tu asistencia antes del {{fecha_limite}}.",
-
     "pase": {
       "enabled": true,
       "label": "Pase para"
     },
-
     "mesa": {
-      "enabled": false,
+      "enabled": true,
       "label": "Mesa"
     },
-
     "botones": {
       "si": "Sí, asistiré",
       "no": "No podré asistir"
     },
-
     "final": {
       "titulo": "¡Gracias por confirmar!",
       "texto": "Hemos reservado estos lugares en su honor.",
@@ -236,7 +279,7 @@
       "text": "Gracias a quienes me han acompañado siempre"
     },
     "ubicacion": {
-      "enabled": true,
+      "enabled": false,
       "text": "El lugar donde todo sucederá"
     },
     "programa": {

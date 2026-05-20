@@ -1,385 +1,427 @@
 <!doctype html>
 <html lang="es">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title></title>
 
-    <!-- Fuentes -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Montserrat:wght@300;400;500&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap"
-      rel="stylesheet"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title></title>
 
-    <!-- Estilos -->
-    <link rel="stylesheet" href="assets/css/styles.css?v=1.0.4">
-  </head>
+  <!-- Fuentes -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;700&family=Montserrat:wght@300;400;500&display=swap"
+    rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" />
 
-  <body>
-    <!-- AUDIO -->
-    <audio id="bgSong" preload="auto" playsinline></audio>
+  <!-- Estilos -->
+  <link rel="stylesheet" href="assets/css/styles.css?v=1.0.4">
+</head>
 
-    <div id="openingPhrase" class="opening-phrase"></div>
-    <div id="scrollHint" class="scroll-hint"></div>
+<body>
+  <!-- AUDIO -->
+  <audio id="bgSong" preload="metadata"></audio>
+  <div id="openingPhrase" class="opening-phrase"></div>
+  <div id="scrollHint" class="scroll-hint"></div>
 
-    <!-- BOTÓN DE MÚSICA -->
-    <div id="musicToggle" class="music-btn">
-      <img id="musicIcon" src="" alt="music toggle" />
+  <!-- ================= NAVBAR ================= -->
+  <nav class="navbar">
+    <div class="nav-inner">
+      <div class="logo reveal reveal-left"></div>
+      <div class="nav-toggle" id="navToggle">☰</div>
+      <ul class="nav-menu reveal reveal-right" id="navMenu"></ul>
+    </div>
+  </nav>
+
+  <!-- ================= SOBRE ================= -->
+  <div id="envelopeOverlay" class="envelope-overlay">
+
+    <div class="invite-bg"></div>
+
+    <div class="invite-intro">
+
+      <h1 class="invite-name" id="invite-name"></h1>
+
+      <p class="invite-text">
+        ES UN HONOR INVITARTE A CELEBRAR MIS XV AÑOS.
+        HAZ CLIC EN EL SOBRE PARA ABRIR LA INVITACIÓN
+        Y DESCUBRIR TODOS LOS DETALLES DE ESTE DÍA TAN ESPECIAL.
+      </p>
+
     </div>
 
-    <!-- ================= NAVBAR ================= -->
-    <nav class="navbar">
-      <div class="nav-inner">
-        <div class="logo reveal reveal-left"></div>
-        <div class="nav-toggle" id="navToggle">☰</div>
-        <ul class="nav-menu reveal reveal-right" id="navMenu"></ul>
-      </div>
-    </nav>
-
-    <!-- ================= SOBRE ================= -->
-    <div id="envelopeOverlay" class="envelope-overlay">
-      <div class="envelope">
-        <div class="flap front"></div>
-        <div class="flap top"></div>
-        <div class="letter"></div>
-        <div id="sealButton" class="seal">
-          <img src="assets/img/sello.png" alt="Abrir" />
-        </div>
+    <div class="envelope">
+      <div class="flap front"></div>
+      <div class="flap top"></div>
+      <div class="letter"></div>
+      <div id="sealButton" class="seal">
+        <img src="assets/img/sello.png" alt="Abrir" />
       </div>
     </div>
+  </div>
 
-    <!-- ================= CONTENIDO ================= -->
-    <div id="siteRoot" class="site-root">
-      <!-- ================= HERO ================= -->
-      <section id="inicio" class="section-arco hero-arco reveal">
-        <img src="assets/img/acuarela.svg" class="acuarela-left" />
-        <img src="assets/img/acuarela.svg" class="acuarela-right" />
+  <!-- ================= CONTENIDO ================= -->
+  <div id="siteRoot" class="site-root">
+    <!-- ================= HERO ================= -->
+    <section id="inicio" class="hero-modern">
 
-        <div class="arco-base arco-hero">
-          <div class="hero-bg"></div>
+      <div class="hero-bg"></div>
+
+      <div class="hero-overlay"></div>
+
+      <div class="hero-content">
+
+        <h1 class="hero-names" id="hero-names"></h1>
+
+      </div>
+
+    </section>
+
+    <!-- ================= INTRO MUSICAL ================= -->
+    <section id="intro-musical" class="intro-musical-section reveal">
+      <!-- ACUARELAS -->
+      <img src="assets/img/acuarela.png" class="acuarela-left" />
+      <img src="assets/img/acuarela.png" class="acuarela-right" />
+      <div class="intro-musical-inner">
+
+        <h2 id="intro-musical-title" class="intro-musical-title"></h2>
+
+        <p id="intro-musical-subtitle" class="intro-musical-subtitle"></p>
+
+        <!-- PLAYER -->
+        <div class="music-player-ui">
+
+          <button id="introPlayBtn" class="intro-play-btn">
+
+            <img id="introPlayIcon" src="assets/img/play.svg" alt="Play">
+
+          </button>
+
+          <input type="range" id="introProgress" min="0" max="100" value="0" />
+
         </div>
 
-        <div class="hero-info">
-          <h1 class="hero-names" id="hero-names"></h1>
-          <div class="hero-count-wrapper reveal">
-  <p class="hero-count-label">Faltan</p>
-          <div class="hero-count reveal">
-            <div><span id="dias">00</span><small id="label-dias"></small></div>
-            <div class="sep">·</div>
-            <div>
-              <span id="horas">00</span><small id="label-horas"></small>
+        <!-- MENSAJE -->
+        <div id="intro-musical-message" class="intro-message-box"></div>
+      </div>
+
+    </section>
+
+    <!-- ================= COUNTDOWN FULLSCREEN ================= -->
+    <section id="countdown-full" class="countdown-fullscreen">
+      <!-- ACUARELAS -->
+      <img src="assets/img/acuarela.png" class="acuarela-left" />
+      <img src="assets/img/acuarela.png" class="acuarela-right" />
+      <div class="countdown-bg"></div>
+
+      <div class="countdown-overlay-top"></div>
+      <div class="countdown-overlay-bottom"></div>
+
+      <div class="countdown-content">
+
+        <p class="countdown-mini">
+          Tan solo faltan
+        </p>
+
+        <div class="countdown-timer">
+
+          <div class="count-item">
+            <span id="dias">00</span>
+            <small id="label-dias">DÍAS</small>
+          </div>
+
+          <div class="count-separator">:</div>
+
+          <div class="count-item">
+            <span id="horas">00</span>
+            <small id="label-horas">HORAS</small>
+          </div>
+
+          <div class="count-separator">:</div>
+
+          <div class="count-item">
+            <span id="minutos">00</span>
+            <small id="label-minutos">MINUTOS</small>
+          </div>
+
+          <div class="count-separator">:</div>
+
+          <div class="count-item">
+            <span id="segundos">00</span>
+            <small id="label-segundos">SEGUNDOS</small>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= PERGAMINO ================= -->
+    <section id="pergamino-section" class="pergamino-section">
+
+      <!-- ACUARELAS -->
+      <img src="assets/img/acuarela.png" class="acuarela-left" />
+      <img src="assets/img/acuarela.png" class="acuarela-right" />
+      <div class="pergamino-paper">
+
+        <div class="pergamino-content">
+
+          <h2 class="pergamino-title">
+            Quinceañera
+          </h2>
+
+          <h3 id="pergamino-name" class="pergamino-name">
+          </h3>
+
+          <div class="pergamino-block">
+
+            <h4 id="pergamino-padres-label"></h4>
+
+            <p id="pergamino-padres"></p>
+
+          </div>
+
+          <div class="pergamino-block">
+
+            <h4 id="pergamino-padrinos-label"></h4>
+
+            <p id="pergamino-padrinos"></p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================= UBICACIÓN ================= -->
+    <section id="ubicacion" class="section-arco reveal">
+
+      <div class="flores-deco">
+        <div class="butterflies">
+          <img src="assets/img/flor.png" class="butterfly butterfly-left">
+          <img src="assets/img/flor.png" class="butterfly butterfly-right">
+        </div>
+      </div>
+
+      <img src="assets/img/acuarela.png" class="acuarela-left" />
+      <img src="assets/img/acuarela.png" class="acuarela-right" />
+
+      <!-- FECHA FUERA DEL ARCO -->
+      <div id="ubicacion-fecha-general" class="reveal"></div>
+
+      <div class="editorial-text" data-editorial="ubicacion"></div>
+
+      <h2 id="ubicacion-titulo" class="arco-title"></h2>
+
+      <div id="ubicacion-lista" class="reveal"></div>
+
+    </section>
+
+    <!-- ================= PROGRAMA ================= -->
+    <section id="programa" class="section-arco reveal">
+      <!-- 🌸 DECORACIÓN FUERA DEL ARCO (NO AFECTA LAYOUT) -->
+      <div class="flores-deco">
+        <div class="butterflies">
+          <img src="assets/img/flor.png" class="butterfly butterfly-left">
+          <img src="assets/img/flor.png" class="butterfly butterfly-right">
+        </div>
+      </div>
+
+      <!-- ACUARELAS -->
+      <img src="assets/img/acuarela.png" class="acuarela-left" />
+      <img src="assets/img/acuarela.png" class="acuarela-right" />
+
+      <!-- 🏛️ ARCO (CONTENIDO REAL) -->
+      <div class="arco-base">
+        <div class="editorial-text" data-editorial="programa"></div>
+
+        <h2 id="programa-titulo" class="arco-title"></h2>
+
+        <div id="timeline-programa" class="timeline-programa reveal"></div>
+      </div>
+    </section>
+
+    <!-- ================= VESTIMENTA ================= -->
+    <section id="vestimenta" class="section-arco reveal">
+      <!-- 🌸 DECORACIÓN FUERA DEL ARCO (NO AFECTA LAYOUT) -->
+      <div class="flores-deco">
+        <div class="butterflies">
+          <img src="assets/img/flor.png" class="butterfly butterfly-left">
+          <img src="assets/img/flor.png" class="butterfly butterfly-right">
+        </div>
+      </div>
+
+      <!-- ACUARELAS -->
+      <img src="assets/img/acuarela.png" class="acuarela-left" />
+      <img src="assets/img/acuarela.png" class="acuarela-right" />
+
+      <!-- 🏛️ ARCO (CONTENIDO REAL) -->
+      <div class="arco-base">
+        <div class="editorial-text" data-editorial="vestimenta"></div>
+
+        <h2 id="vestimenta-titulo" class="arco-title"></h2>
+
+        <img id="vestimenta-icon" class="vestimenta-icon reveal" />
+
+        <h3 id="vestimenta-formal" class="reveal"></h3>
+
+        <p id="vestimenta-mujeres" class="reveal reveal-left"></p>
+
+        <p id="vestimenta-hombres" class="reveal reveal-right"></p>
+      </div>
+    </section>
+
+    <!-- ================= REGALOS ================= -->
+    <section id="regalos" class="section-arco reveal">
+      <!-- 🌸 DECORACIÓN FUERA DEL ARCO (NO AFECTA LAYOUT) -->
+      <div class="flores-deco">
+        <div class="butterflies">
+          <img src="assets/img/flor.png" class="butterfly butterfly-left">
+          <img src="assets/img/flor.png" class="butterfly butterfly-right">
+        </div>
+      </div>
+
+      <!-- ACUARELAS -->
+      <img src="assets/img/acuarela.png" class="acuarela-left" />
+      <img src="assets/img/acuarela.png" class="acuarela-right" />
+
+      <!-- 🏛️ ARCO (CONTENIDO REAL) -->
+      <div class="arco-base">
+        <div class="editorial-text" data-editorial="regalos"></div>
+
+        <h2 id="regalos-titulo" class="arco-title"></h2>
+
+        <p id="regalos-desc" class="regalos-desc reveal"></p>
+
+        <div id="regalos-inner" class="reveal"></div>
+      </div>
+    </section>
+
+    <!-- ================= GALERÍA ================= -->
+    <section id="galeria" class="section-arco reveal">
+      <!-- 🌸 DECORACIÓN FUERA DEL ARCO (NO AFECTA LAYOUT) -->
+      <div class="flores-deco">
+        <div class="butterflies">
+          <img src="assets/img/flor.png" class="butterfly butterfly-left">
+          <img src="assets/img/flor.png" class="butterfly butterfly-right">
+        </div>
+      </div>
+
+      <!-- ACUARELAS -->
+      <img src="assets/img/acuarela.png" class="acuarela-left" />
+      <img src="assets/img/acuarela.png" class="acuarela-right" />
+
+      <!-- 🏛️ ARCO (CONTENIDO REAL) -->
+      <div class="arco-base">
+        <div class="editorial-text" data-editorial="galeria"></div>
+
+        <h2 id="galeria-titulo" class="arco-title"></h2>
+
+        <div class="carousel reveal">
+          <div class="carousel-track" id="carousel-track"></div>
+
+          <button class="carousel-btn left" aria-label="Anterior">
+            &#10094;
+          </button>
+
+          <button class="carousel-btn right" aria-label="Siguiente">
+            &#10095;
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= RSVP ================= -->
+    <section id="rsvp" class="section-arco reveal">
+
+      <!-- 🌸 DECORACIÓN FUERA DEL ARCO -->
+      <div class="flores-deco">
+        <div class="butterflies">
+          <img src="assets/img/flor.png" class="butterfly butterfly-left">
+          <img src="assets/img/flor.png" class="butterfly butterfly-right">
+        </div>
+      </div>
+
+      <!-- ACUARELAS -->
+      <img src="assets/img/acuarela.png" class="acuarela-left" />
+      <img src="assets/img/acuarela.png" class="acuarela-right" />
+
+      <!-- 🏛️ ARCO -->
+      <div class="arco-base">
+
+        <!-- ===== FORMULARIO RSVP ===== -->
+        <div id="rsvp-form" class="rsvp-container reveal">
+
+          <div class="editorial-text" data-editorial="rsvp"></div>
+          <h2 id="rsvp-form-title" class="arco-title"></h2>
+
+          <div class="rsvp-guest-name reveal"></div>
+
+          <p class="rsvp-text reveal"></p>
+
+          <div class="rsvp-options reveal">
+            <button type="button" class="rsvp-btn yes"></button>
+            <button type="button" class="rsvp-btn no"></button>
+          </div>
+
+          <p class="rsvp-note reveal"></p>
+
+        </div>
+
+        <!-- ===== CONFIRMACIÓN FINAL ===== -->
+        <div id="rsvp-final" class="reveal">
+
+          <h2 id="rsvp-final-title"></h2>
+
+          <div class="rsvp-guest-name"></div>
+
+          <p id="rsvp-final-text"></p>
+
+          <div class="rsvp-pass-info reveal">
+            <div class="rsvp-pass-item">
+              <span class="label" id="rsvpPassLabel"></span>
+              <strong id="rsvpPassValue"></strong>
             </div>
-            <div class="sep">·</div>
-            <div>
-              <span id="minutos">00</span><small id="label-minutos"></small>
-            </div>
-            <div class="sep">·</div>
-            <div>
-              <span id="segundos">00</span><small id="label-segundos"></small>
+
+            <div class="rsvp-pass-item">
+              <span class="label" id="rsvpTableLabel"></span>
+              <strong id="rsvpTableValue"></strong>
             </div>
           </div>
-        </div>
-                    </div>
-          </div>
-      </section>
 
-      <!-- ================= PRESENTACIÓN ================= -->
-<section id="presentacion" class="section-arco reveal">
+          <div class="rsvp-sign" id="rsvp-names"></div>
 
-  <!-- 🌸 FLORES FUERA DEL ARCO -->
-  <div class="flores-deco">
-<div class="butterflies">
-  <img src="assets/img/mariposa-1.svg" class="butterfly butterfly-left">
-  <img src="assets/img/mariposa-2.svg" class="butterfly butterfly-right">
-</div>
-  </div>
-
-  <img src="assets/img/acuarela.svg" class="acuarela-left" />
-  <img src="assets/img/acuarela.svg" class="acuarela-right" />
-
-  <div class="arco-base">
-
-    <h2 id="titulo-presentacion" class="arco-title reveal reveal-left"></h2>
-
-    <h3 id="nombres-presentacion" class="arco-nombres reveal"></h3>
-
-    <p id="frase-presentacion" class="arco-frase reveal reveal-right"></p>
-
-    <div class="arco-grupo reveal reveal-left">
-      <h4 id="label-padres-novia"></h4>
-      <p id="padres-novia"></p>
-    </div>
-
-    <div class="arco-grupo reveal reveal-right">
-      <h4 id="label-padres-novio"></h4>
-      <p id="padres-novio"></p>
-    </div>
-
-    <div class="arco-grupo reveal">
-      <h4 id="label-padrinos"></h4>
-      <p id="padrinos"></p>
-    </div>
-
-    <div class="arco-img reveal">
-      <img id="presentacion-img" alt="imagen evento" />
-    </div>
-
-    <p id="texto-final-presentacion" class="reveal"></p>
-
-  </div>
-</section>
-
-      <!-- ================= UBICACIÓN ================= -->
-      <section id="ubicacion" class="section-arco reveal">
-        <!-- 🌸 DECORACIÓN FUERA DEL ARCO (NO AFECTA LAYOUT) -->
-        <div class="flores-deco">
-<div class="butterflies">
-  <img src="assets/img/mariposa-1.svg" class="butterfly butterfly-left">
-  <img src="assets/img/mariposa-2.svg" class="butterfly butterfly-right">
-</div>
         </div>
 
-        <!-- ACUARELAS -->
-        <img src="assets/img/acuarela.svg" class="acuarela-left" />
-        <img src="assets/img/acuarela.svg" class="acuarela-right" />
-
-        <!-- 🏛️ ARCO (CONTENIDO REAL) -->
-        <div class="arco-base ubicacion-premium">
-          <div
-            class="editorial-text"
-            data-editorial="ubicacion"
-          ></div>
-
-          <h2 id="ubicacion-titulo" class="arco-title"></h2>
-
-          <div id="ubicacion-fecha-general" class="reveal"></div>
-          <div id="ubicacion-lista" class="reveal"></div>
-        </div>
-      </section>
-
-      <!-- ================= PROGRAMA ================= -->
-      <section id="programa" class="section-arco reveal">
-        <!-- 🌸 DECORACIÓN FUERA DEL ARCO (NO AFECTA LAYOUT) -->
-        <div class="flores-deco">
-<div class="butterflies">
-  <img src="assets/img/mariposa-1.svg" class="butterfly butterfly-left">
-  <img src="assets/img/mariposa-2.svg" class="butterfly butterfly-right">
-</div>
-        </div>
-
-        <!-- ACUARELAS -->
-        <img src="assets/img/acuarela.svg" class="acuarela-left" />
-        <img src="assets/img/acuarela.svg" class="acuarela-right" />
-
-        <!-- 🏛️ ARCO (CONTENIDO REAL) -->
-        <div class="arco-base">
-          <div
-            class="editorial-text"
-            data-editorial="programa"
-          ></div>
-
-          <h2 id="programa-titulo" class="arco-title"></h2>
-
-          <div id="timeline-programa" class="timeline-programa reveal"></div>
-        </div>
-      </section>
-
-      <!-- ================= VESTIMENTA ================= -->
-      <section id="vestimenta" class="section-arco reveal">
-        <!-- 🌸 DECORACIÓN FUERA DEL ARCO (NO AFECTA LAYOUT) -->
-        <div class="flores-deco">
-<div class="butterflies">
-  <img src="assets/img/mariposa-1.svg" class="butterfly butterfly-left">
-  <img src="assets/img/mariposa-2.svg" class="butterfly butterfly-right">
-</div>
-        </div>
-
-        <!-- ACUARELAS -->
-        <img src="assets/img/acuarela.svg" class="acuarela-left" />
-        <img src="assets/img/acuarela.svg" class="acuarela-right" />
-
-        <!-- 🏛️ ARCO (CONTENIDO REAL) -->
-        <div class="arco-base">
-          <div
-            class="editorial-text"
-            data-editorial="vestimenta"
-          ></div>
-
-          <h2 id="vestimenta-titulo" class="arco-title"></h2>
-
-          <img id="vestimenta-icon" class="vestimenta-icon reveal" />
-
-          <h3 id="vestimenta-formal" class="reveal"></h3>
-
-          <p id="vestimenta-mujeres" class="reveal reveal-left"></p>
-
-          <p id="vestimenta-hombres" class="reveal reveal-right"></p>
-        </div>
-      </section>
-
-      <!-- ================= REGALOS ================= -->
-      <section id="regalos" class="section-arco reveal">
-        <!-- 🌸 DECORACIÓN FUERA DEL ARCO (NO AFECTA LAYOUT) -->
-        <div class="flores-deco">
-<div class="butterflies">
-  <img src="assets/img/mariposa-1.svg" class="butterfly butterfly-left">
-  <img src="assets/img/mariposa-2.svg" class="butterfly butterfly-right">
-</div>
-</div>
-
-        <!-- ACUARELAS -->
-        <img src="assets/img/acuarela.svg" class="acuarela-left" />
-        <img src="assets/img/acuarela.svg" class="acuarela-right" />
-
-        <!-- 🏛️ ARCO (CONTENIDO REAL) -->
-        <div class="arco-base">
-          <div
-            class="editorial-text"
-            data-editorial="regalos"
-          ></div>
-
-          <h2 id="regalos-titulo" class="arco-title"></h2>
-
-          <p id="regalos-desc" class="regalos-desc reveal"></p>
-
-          <div id="regalos-inner" class="reveal"></div>
-        </div>
-      </section>
-
-      <!-- ================= GALERÍA ================= -->
-      <section id="galeria" class="section-arco reveal">
-        <!-- 🌸 DECORACIÓN FUERA DEL ARCO (NO AFECTA LAYOUT) -->
-        <div class="flores-deco">
-<div class="butterflies">
-  <img src="assets/img/mariposa-1.svg" class="butterfly butterfly-left">
-  <img src="assets/img/mariposa-2.svg" class="butterfly butterfly-right">
-</div>
-        </div>
-
-        <!-- ACUARELAS -->
-        <img src="assets/img/acuarela.svg" class="acuarela-left" />
-        <img src="assets/img/acuarela.svg" class="acuarela-right" />
-
-        <!-- 🏛️ ARCO (CONTENIDO REAL) -->
-        <div class="arco-base">
-          <div
-            class="editorial-text"
-            data-editorial="galeria"
-          ></div>
-
-          <h2 id="galeria-titulo" class="arco-title"></h2>
-
-          <div class="carousel reveal">
-            <div class="carousel-track" id="carousel-track"></div>
-
-            <button class="carousel-btn left" aria-label="Anterior">
-              &#10094;
-            </button>
-
-            <button class="carousel-btn right" aria-label="Siguiente">
-              &#10095;
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- ================= RSVP ================= -->
-<section id="rsvp" class="section-arco reveal">
-
-  <!-- 🌸 DECORACIÓN FUERA DEL ARCO -->
-  <div class="flores-deco">
-<div class="butterflies">
-  <img src="assets/img/mariposa-1.svg" class="butterfly butterfly-left">
-  <img src="assets/img/mariposa-2.svg" class="butterfly butterfly-right">
-</div>
-  </div>
-
-  <!-- ACUARELAS -->
-  <img src="assets/img/acuarela.svg" class="acuarela-left" />
-  <img src="assets/img/acuarela.svg" class="acuarela-right" />
-
-  <!-- 🏛️ ARCO -->
-  <div class="arco-base">
-
-    <!-- ===== FORMULARIO RSVP ===== -->
-    <div id="rsvp-form" class="rsvp-container reveal">
-
-      <div
-        class="editorial-text"
-        data-editorial="rsvp"
-      ></div>
-     <h2 id="rsvp-form-title" class="arco-title"></h2>
-
-<div class="rsvp-guest-name reveal"></div>
-
-<p class="rsvp-text reveal"></p>
-
-      <div class="rsvp-options reveal">
-        <button type="button" class="rsvp-btn yes"></button>
-        <button type="button" class="rsvp-btn no"></button>
       </div>
 
-      <p class="rsvp-note reveal"></p>
+    </section>
+    <footer class="site-footer">
 
-    </div>
+      <small id="footer-text"></small>
 
-    <!-- ===== CONFIRMACIÓN FINAL ===== -->
-    <div id="rsvp-final" class="reveal">
+      <div class="footer-links">
 
-  <h2 id="rsvp-final-title"></h2>
+        <a href="https://shiny-maker.com/" target="_blank" rel="noopener" class="footer-brand">
+          Shiny Maker
+        </a>
 
-  <div class="rsvp-guest-name"></div>
+        <a href="https://wa.me/522212576641" rel="noopener" target="_blank">
+          <img src="assets/img/wh.png" alt="WhatsApp">
+        </a>
 
-  <p id="rsvp-final-text"></p>
+        <a href="https://www.instagram.com/shinymakerstudio" rel="noopener" target="_blank">
+          <img src="assets/img/ig.png" alt="Instagram">
+        </a>
 
-      <div class="rsvp-pass-info reveal">
-        <div class="rsvp-pass-item">
-          <span class="label" id="rsvpPassLabel"></span>
-          <strong id="rsvpPassValue"></strong>
-        </div>
+        <a href="https://www.facebook.com/profile.php?id=61587591115184" rel="noopener" target="_blank">
+          <img src="assets/img/fb.png" alt="Facebook">
+        </a>
 
-        <div class="rsvp-pass-item">
-          <span class="label" id="rsvpTableLabel"></span>
-          <strong id="rsvpTableValue"></strong>
-        </div>
       </div>
 
-      <div class="rsvp-sign" id="rsvp-names"></div>
-
-    </div>
-
-  </div>
-
-</section>
-<footer class="site-footer">
-
-  <small id="footer-text"></small>
-
-  <div class="footer-links">
-
-    <a href="https://shiny-maker.com/" target="_blank" rel="noopener" class="footer-brand">
-      Shiny Maker
-    </a>
-
-    <a href="https://wa.me/522212576641" rel="noopener" target="_blank">
-      <img src="assets/img/wh.png" alt="WhatsApp">
-    </a>
-
-    <a href="https://www.instagram.com/shinymakerstudio" rel="noopener" target="_blank">
-      <img src="assets/img/ig.png" alt="Instagram">
-    </a>
-
-    <a href="https://www.facebook.com/profile.php?id=61587591115184" rel="noopener" target="_blank">
-      <img src="assets/img/fb.png" alt="Facebook">
-    </a>
-
-  </div>
-
-</footer>
+    </footer>
     <!-- ================= SCRIPTS ================= -->
     <script src="assets/js/envelope-open.js"></script>
     <script src="assets/js/navbar.js"></script>
@@ -389,5 +431,6 @@
     <script src="assets/js/timeline.js"></script>
     <script src="assets/js/carousel.js"></script>
     <script src="assets/js/rsvp.js"></script>
-  </body>
+</body>
+
 </html>

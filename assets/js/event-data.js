@@ -78,17 +78,7 @@ fetch("assets/js/evento.json")
         musicIcon.src = `assets/img/${data.audio.icons.play}`;
       }
 
-      if (musicToggle && musicIcon) {
-        musicToggle.addEventListener("click", () => {
-          if (audio.paused) {
-            audio.play().catch(() => {});
-            musicIcon.src = `assets/img/${data.audio.icons.pause}`;
-          } else {
-            audio.pause();
-            musicIcon.src = `assets/img/${data.audio.icons.play}`;
-          }
-        });
-      }
+
     }
 
     /* ================= NAVBAR ================= */
@@ -114,26 +104,29 @@ fetch("assets/js/evento.json")
     /* ================= HERO ================= */
 
     if (isEnabled(data.hero)) {
+
       const hero = data.hero;
 
       const heroNamesEl = document.getElementById("hero-names");
 
       if (hero.names?.festejada) {
-        const texto = hero.names.festejada;
 
-        let titulo = "";
-        let nombre = texto;
-
-        if (texto.startsWith("XV Años")) {
-          titulo = "XV Años";
-          nombre = texto.replace("XV Años ", "");
-        }
+        const nombre = hero.names.festejada;
 
         heroNamesEl.innerHTML = `
-    <span class="hero-title">${titulo}</span>
-    <span class="hero-name">${nombre}</span>
-  `;
+      <span>${nombre}</span>
+    `;
+
+        const inviteName = document.getElementById("invite-name");
+
+        if (inviteName) {
+          inviteName.innerHTML = `
+        <span>${nombre}</span>
+      `;
+        }
+
       } else if (hero.names?.novia && hero.names?.novio) {
+
         heroNamesEl.textContent = `${hero.names.novia} & ${hero.names.novio}`;
       }
 
@@ -153,6 +146,127 @@ fetch("assets/js/evento.json")
       removeSection("inicio");
     }
 
+    /* ================= INTRO MUSICAL ================= */
+
+    if (isEnabled(data.intro_musical)) {
+
+      const intro = data.intro_musical;
+
+      setText(
+        "intro-musical-title",
+        intro.title
+      );
+
+      setText(
+        "intro-musical-subtitle",
+        intro.subtitle
+      );
+
+      const message =
+        document.getElementById(
+          "intro-musical-message"
+        );
+
+      if (message && intro.message?.length) {
+
+        message.innerHTML = intro.message
+          .map(text => `<p>${text}</p>`)
+          .join("");
+
+      }
+
+      const audio =
+        document.getElementById("bgSong");
+
+      const playBtn =
+        document.getElementById("introPlayBtn");
+
+      const playIcon =
+        document.getElementById("introPlayIcon");
+
+      const progress =
+        document.getElementById("introProgress");
+
+      if (
+        audio &&
+        playBtn &&
+        playIcon &&
+        progress
+      ) {
+
+        let isPlaying = false;
+
+        playBtn.addEventListener("click", async () => {
+
+          try {
+
+            if (!isPlaying) {
+
+              await audio.play();
+
+              isPlaying = true;
+
+              playIcon.src =
+                "assets/img/pause.svg";
+
+            } else {
+
+              audio.pause();
+
+              isPlaying = false;
+
+              playIcon.src =
+                "assets/img/play.svg";
+
+            }
+
+          } catch (err) {
+
+            console.log(
+              "Error audio:",
+              err
+            );
+
+          }
+
+        });
+
+        audio.addEventListener("timeupdate", () => {
+
+          if (!audio.duration) return;
+
+          progress.value =
+            (audio.currentTime / audio.duration) * 100;
+
+        });
+
+        progress.addEventListener("input", () => {
+
+          if (!audio.duration) return;
+
+          audio.currentTime =
+            (progress.value / 100) * audio.duration;
+
+        });
+
+        audio.addEventListener("ended", () => {
+
+          isPlaying = false;
+
+          playIcon.src =
+            "assets/img/play.svg";
+
+          progress.value = 0;
+
+        });
+
+      }
+
+    } else {
+
+      removeSection("intro-musical");
+
+    }
     /* ================= PRESENTACIÓN ================= */
 
     if (isEnabled(data.presentacion)) {
@@ -190,6 +304,33 @@ fetch("assets/js/evento.json")
 
       setText("texto-final-presentacion", p.texto_final || "");
 
+      /* ================= PERGAMINO ================= */
+
+      setText(
+        "pergamino-name",
+        p.nombres || ""
+      );
+
+      setText(
+        "pergamino-padres-label",
+        p.labels?.padres || "Mis Padres"
+      );
+
+      setHTML(
+        "pergamino-padres",
+        p.padres?.festejada?.join("<br>") || ""
+      );
+
+      setText(
+        "pergamino-padrinos-label",
+        p.labels?.padrinos || "Mis Padrinos"
+      );
+
+      setHTML(
+        "pergamino-padrinos",
+        p.padrinos?.join("<br>") || ""
+      );
+
       const img = document.querySelector(".arco-img img");
       if (img && data.media?.presentacion) {
         img.src = `assets/img/${data.media.presentacion}`;
@@ -225,11 +366,41 @@ fetch("assets/js/evento.json")
         });
 
         fechaGeneralEl.innerHTML = `
-    <div class="fecha-wrapper">
-      <span class="fecha-dia">${dia}</span>
-      <span class="fecha-completa">${fechaBonita}</span>
+
+<div class="fecha-title">
+  mis XV años
+</div>
+
+<div class="fecha-wrapper">
+
+  <div class="fecha-top">
+    ${dia}
+  </div>
+
+  <div class="fecha-line"></div>
+
+  <div class="fecha-center">
+
+    <div class="fecha-month">
+      ${fecha.toLocaleDateString("es-MX", {
+          month: "long",
+        })}
     </div>
-  `;
+
+    <div class="fecha-dia">
+      ${fecha.getDate()}
+    </div>
+
+  </div>
+
+  <div class="fecha-line"></div>
+
+  <div class="fecha-year">
+    ${fecha.getFullYear()}
+  </div>
+
+</div>
+`;
       }
 
       const lista = document.getElementById("ubicacion-lista");
@@ -238,28 +409,54 @@ fetch("assets/js/evento.json")
       u.lugares
         .filter((l) => isEnabled(l) && l.lugar && l.hora)
         .forEach((lugar) => {
+
           lista.insertAdjacentHTML(
             "beforeend",
             `
-            <div class="ubicacion-card reveal">
-              <h3 class="ubicacion-subtitle">${lugar.tipo}</h3>
-              <div class="ubicacion-hora">${lugar.hora}</div>
-              <div class="ubicacion-lugar">${lugar.lugar}</div>
-              ${
-                lugar.direccion?.length
-                  ? `<div class="ubicacion-direccion">${lugar.direccion.join(
-                      "<br>",
-                    )}</div>`
-                  : ""
-              }
-              ${
-                lugar.mapa
-                  ? `<a href="${lugar.mapa}" target="_blank" class="btn-ubicacion">Ver ubicación</a>`
-                  : ""
-              }
-            </div>
-          `,
+<div class="ubicacion-card reveal">
+
+  <div class="ubicacion-img-wrap">
+
+    <img
+      src="assets/img/${lugar.imagen}"
+      class="ubicacion-img"
+    >
+
+  </div>
+
+  <div class="ubicacion-body">
+
+    <div class="ubicacion-subtitle">
+      ${lugar.tipo}
+    </div>
+
+    <div class="ubicacion-lugar">
+      ${lugar.lugar}
+    </div>
+
+    <div class="ubicacion-hora">
+      ${lugar.hora}
+    </div>
+
+    ${lugar.mapa
+              ? `
+      <a
+        href="${lugar.mapa}"
+        target="_blank"
+        class="btn-ubicacion"
+      >
+        Ver ubicación
+      </a>
+      `
+              : ""
+            }
+
+  </div>
+
+</div>
+`
           );
+
         });
     } else {
       removeSection("ubicacion");
@@ -280,11 +477,22 @@ fetch("assets/js/evento.json")
         timeline.insertAdjacentHTML(
           "beforeend",
           `
-          <div class="item ${lado} reveal reveal-${lado}">
-            <img class="icon" src="assets/img/${item.icono}">
-            <div class="hora">${item.hora}</div>
-            <div class="texto">${item.texto}</div>
+        <div class="item ${lado} reveal reveal-${lado}">
+          
+          <img
+            class="icon"
+            src="assets/img/${item.icono}"
+          >
+
+          <div class="hora">
+            ${item.hora}
           </div>
+
+          <div class="texto">
+            ${item.texto}
+          </div>
+
+        </div>
         `,
         );
       });
@@ -325,7 +533,7 @@ fetch("assets/js/evento.json")
           "beforeend",
           `
           <div class="regalo-item reveal">
-            <img src="assets/img/${item.icono}" class="regalo-icon">
+          <img src="assets/img/${item.icono}" class="regalo-icon">
             <p class="regalo-label">${item.label}</p>
           </div>
         `,
@@ -347,7 +555,7 @@ fetch("assets/js/evento.json")
       (data.media?.galeria || []).forEach((img) => {
         track.insertAdjacentHTML(
           "beforeend",
-          `<img src="assets/img/${img}" class="carousel-img">`,
+          `<img src="assets/img/${img}" class="carousel-img"> `,
         );
       });
     } else {
