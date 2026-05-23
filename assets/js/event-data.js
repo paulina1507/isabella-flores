@@ -207,7 +207,7 @@ fetch("assets/js/evento.json")
               isPlaying = true;
 
               playIcon.src =
-                "assets/img/pause.svg";
+                "assets/img/pause.png";
 
             } else {
 
@@ -216,7 +216,7 @@ fetch("assets/js/evento.json")
               isPlaying = false;
 
               playIcon.src =
-                "assets/img/play.svg";
+                "assets/img/play.png";
 
             }
 
@@ -254,7 +254,7 @@ fetch("assets/js/evento.json")
           isPlaying = false;
 
           playIcon.src =
-            "assets/img/play.svg";
+            "assets/img/play.png";
 
           progress.value = 0;
 
@@ -570,8 +570,11 @@ fetch("assets/js/evento.json")
 
       if (form) {
         setText("rsvp-form-title", rsvp.titulo || "");
-        form.querySelector(".rsvp-text").innerHTML = rsvp.texto || "";
-        let nota = rsvp.nota || "";
+        const textEl = form.querySelector(".rsvp-text");
+
+        if (textEl) {
+          textEl.innerHTML = rsvp.texto || "";
+        } let nota = rsvp.nota || "";
 
         if (rsvp.fecha_limite) {
           const fecha = new Date(rsvp.fecha_limite);
@@ -585,10 +588,22 @@ fetch("assets/js/evento.json")
           nota = nota.replace("{{fecha_limite}}", fechaBonita);
         }
 
-        form.querySelector(".rsvp-note").innerHTML = nota;
-        form.querySelector(".rsvp-btn.yes").textContent =
-          rsvp.botones?.si || "";
-        form.querySelector(".rsvp-btn.no").textContent = rsvp.botones?.no || "";
+        const noteEl = form.querySelector(".rsvp-note");
+
+        if (noteEl) {
+          noteEl.innerHTML = nota;
+        }
+
+        const yesBtn = form.querySelector(".rsvp-btn.yes");
+        const noBtn = form.querySelector(".rsvp-btn.no");
+
+        if (yesBtn) {
+          yesBtn.textContent = rsvp.botones?.si || "";
+        }
+
+        if (noBtn) {
+          noBtn.textContent = rsvp.botones?.no || "";
+        }
       }
 
       const passLabel = document.getElementById("rsvpPassLabel");

@@ -7,7 +7,7 @@
   /* ========================================================= */
 
   --rojo-primary: #8b0e1a;
-  --rojo-dark: #5c0b16;
+  --rojo-dark: #c02036;
   --rojo-deep: #3d0610;
   --rojo-soft: #b32638;
 
@@ -305,11 +305,10 @@ body.content-ready .navbar {
 .hero-bg {
   position: absolute;
   inset: 0;
-
-  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center center;
+  background-size: cover;
 
+  background-position: 20% center;
   z-index: 1;
 }
 
@@ -398,7 +397,7 @@ body.content-ready .navbar {
 
   line-height: 1;
 
-  letter-spacing: 1px;
+  letter-spacing: 3px;
 
   background:
     linear-gradient(120deg,
@@ -858,20 +857,42 @@ body.content-ready .navbar {
   background:
     linear-gradient(rgba(255, 255, 255, .88),
       rgba(255, 255, 255, .94)),
-    url('../img/bg-iglesia.jpg');
+    url('../img/ceremonia.png');
 
   background-size: cover;
   background-position: center;
 }
 
 /* ========================================================= */
-/* FECHA ESTILO REFERENCIA XV                                */
+/* UBICACIÓN — ESTILO EDITORIAL PREMIUM                      */
+/* ========================================================= */
+
+#ubicacion {
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: 100%;
+
+  padding-top: 120px;
+
+  background:
+    linear-gradient(rgba(255, 255, 255, .88),
+      rgba(255, 255, 255, .94)),
+    url('../img/ceremonia.png');
+
+  background-size: cover;
+  background-position: center;
+}
+
+/* ========================================================= */
+/* FECHA GENERAL                                             */
 /* ========================================================= */
 
 #ubicacion-fecha-general {
-
   position: relative;
-
   z-index: 20;
 
   margin-bottom: 30px;
@@ -882,11 +903,9 @@ body.content-ready .navbar {
 /* MIS XV */
 
 .fecha-title {
-
   font-family: "Great Vibes", cursive;
 
   font-size: 3rem;
-
   line-height: 1;
 
   color: #9b3a52;
@@ -897,7 +916,6 @@ body.content-ready .navbar {
 /* LAYOUT */
 
 .fecha-wrapper {
-
   display: flex;
   align-items: center;
   justify-content: center;
@@ -909,7 +927,6 @@ body.content-ready .navbar {
 
 .fecha-top,
 .fecha-year {
-
   font-family: "Montserrat", sans-serif;
 
   font-size: .82rem;
@@ -926,7 +943,6 @@ body.content-ready .navbar {
 /* LÍNEAS */
 
 .fecha-line {
-
   width: 70px;
   height: 1px;
 
@@ -943,7 +959,6 @@ body.content-ready .navbar {
 
 .fecha-line::before,
 .fecha-line::after {
-
   content: "";
 
   position: absolute;
@@ -975,7 +990,6 @@ body.content-ready .navbar {
 /* MES */
 
 .fecha-month {
-
   font-family: "Great Vibes", cursive;
 
   font-size: 1.8rem;
@@ -987,51 +1001,21 @@ body.content-ready .navbar {
   transform: rotate(-8deg);
 }
 
-/* DIA */
+/* DÍA */
 
 .fecha-dia {
-
   font-family: "Great Vibes", cursive;
 
   font-size: 5rem;
-
   line-height: .82;
 
   color: #a10f2b;
+
   font-weight: 400;
 }
 
-/* MOBILE */
-
-@media(max-width:480px) {
-
-  .fecha-title {
-    font-size: 2.5rem;
-  }
-
-  .fecha-top,
-  .fecha-year {
-    font-size: .72rem;
-    letter-spacing: 3px;
-
-    min-width: 65px;
-  }
-
-  .fecha-line {
-    width: 58px;
-  }
-
-  .fecha-month {
-    font-size: 1.45rem;
-  }
-
-  .fecha-dia {
-    font-size: 4.3rem;
-  }
-}
-
 /* ========================================================= */
-/* CONTENEDOR */
+/* CONTENEDOR TARJETAS                                       */
 /* ========================================================= */
 
 #ubicacion-lista {
@@ -1045,12 +1029,14 @@ body.content-ready .navbar {
 }
 
 /* ========================================================= */
-/* TARJETA */
+/* TARJETA EDITORIAL                                         */
 /* ========================================================= */
 
 .ubicacion-card {
   width: 100%;
   max-width: 430px;
+
+  position: relative;
 
   background: #fffdfd;
 
@@ -1062,17 +1048,93 @@ body.content-ready .navbar {
 
   box-shadow:
     0 12px 35px rgba(0, 0, 0, .08);
+
+  padding: 0 0 34px;
+
+  text-align: center;
 }
 
-/* ========================================================= */
+/* LÍNEA SUPERIOR */
+
+.ubicacion-header-line {
+  width: 100%;
+  height: 1px;
+
+  margin: 0 auto 22px;
+
+  background:
+    linear-gradient(to right,
+      transparent,
+      rgba(180, 140, 80, .45),
+      transparent);
+}
+
+/* TOP ROW */
+
+.ubicacion-top-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  margin-bottom: 10px;
+}
+
+/* DÍA */
+
+.ubicacion-dia {
+  font-family: "Great Vibes", cursive;
+
+  font-size: 28px;
+
+  color: #b57d92;
+
+  text-transform: capitalize;
+}
+
+/* AÑO */
+
+.ubicacion-year {
+  font-size: 14px;
+
+  letter-spacing: 5px;
+
+  color: #9f8a64;
+}
+
+/* NÚMERO */
+
+.ubicacion-numero {
+  font-family: "Great Vibes", cursive;
+
+  font-size: 78px;
+  line-height: 1;
+
+  color: #b26b83;
+
+  margin-bottom: 20px;
+}
+
+/* SUBTÍTULO */
+
+.ubicacion-subtitle {
+  font-family: "Great Vibes", cursive;
+
+  font-size: 2.2rem;
+
+  color: #1f1f1f;
+
+  margin-bottom: 22px;
+}
+
 /* IMAGEN */
-/* ========================================================= */
 
 .ubicacion-img-wrap {
   width: 100%;
   height: 330px;
 
   overflow: hidden;
+
+  margin-bottom: 30px;
 }
 
 .ubicacion-img {
@@ -1084,30 +1146,28 @@ body.content-ready .navbar {
   display: block;
 }
 
-/* ========================================================= */
 /* BODY */
-/* ========================================================= */
 
 .ubicacion-body {
-  padding:
-    38px 30px 45px;
-
-  text-align: center;
+  padding: 0 30px;
 }
 
-/* ========================================================= */
-/* TEXTOS */
-/* ========================================================= */
+/* HORA */
 
-.ubicacion-subtitle {
-  font-family: "Great Vibes", cursive;
+.ubicacion-hora {
+  font-family: "Montserrat", sans-serif;
 
-  font-size: 2.4rem;
+  font-size: 1.05rem;
+  font-weight: 700;
 
-  color: #1f1f1f;
+  letter-spacing: .5px;
 
-  margin-bottom: 22px;
+  color: #111;
+
+  margin-bottom: 18px;
 }
+
+/* LUGAR */
 
 .ubicacion-lugar {
   font-family: "Playfair Display", serif;
@@ -1120,26 +1180,19 @@ body.content-ready .navbar {
 
   color: #2d2d2d;
 
-  margin-bottom: 24px;
+  margin-bottom: 16px;
 }
 
-.ubicacion-hora {
+/* DIRECCIÓN */
 
-  font-family: "Montserrat", sans-serif;
+.ubicacion-direccion {
+  max-width: 320px;
 
-  font-size: 1.05rem;
-
-  font-weight: 700;
-
-  letter-spacing: .5px;
-
-  color: #111;
-
-  margin-bottom: 30px;
+  margin: 0 auto 28px;
 }
 
 /* ========================================================= */
-/* BOTÓN */
+/* BOTÓN                                                     */
 /* ========================================================= */
 
 .btn-ubicacion {
@@ -1179,12 +1232,14 @@ body.content-ready .navbar {
     translateY(-2px) scale(1.03);
 }
 
+/* TÍTULO OCULTO */
+
 #ubicacion-titulo {
   display: none;
 }
 
 /* ========================================================= */
-/* MOBILE */
+/* MOBILE                                                    */
 /* ========================================================= */
 
 @media(max-width:480px) {
@@ -1193,21 +1248,53 @@ body.content-ready .navbar {
     padding-top: 90px;
   }
 
-  .fecha-dia {
-    font-size: 4rem;
+  .fecha-title {
+    font-size: 2.5rem;
+  }
+
+  .fecha-top,
+  .fecha-year {
+    font-size: .72rem;
+
+    letter-spacing: 3px;
+
+    min-width: 65px;
   }
 
   .fecha-line {
     width: 50px;
   }
 
+  .fecha-month {
+    font-size: 1.45rem;
+  }
+
+  .fecha-dia {
+    font-size: 4rem;
+  }
+
   .ubicacion-card {
     width: 88%;
-    border-radius: 180px 180px 0 0;
   }
 
   .ubicacion-img-wrap {
     height: 250px;
+
+    border-radius: 180px 180px 0 0;
+  }
+
+  .ubicacion-numero {
+    font-size: 60px;
+  }
+
+  .ubicacion-dia {
+    font-size: 24px;
+  }
+
+  .ubicacion-year {
+    font-size: 12px;
+
+    letter-spacing: 4px;
   }
 
   .ubicacion-subtitle {
@@ -1215,10 +1302,6 @@ body.content-ready .navbar {
   }
 
   .ubicacion-lugar {
-    font-size: 1.2rem;
-  }
-
-  .ubicacion-hora {
     font-size: 1.2rem;
   }
 }
@@ -1635,26 +1718,26 @@ body.content-ready .navbar {
 
 .carousel {
 
-  width:100%;
+  width: 100%;
 
-  max-width:300px;
+  max-width: 300px;
 
-  height:440px;
+  height: 440px;
 
-  margin:auto;
+  margin: auto;
 
-  overflow:hidden;
+  overflow: hidden;
 
-  border-radius:160px 160px 18px 18px;
+  border-radius: 160px 160px 18px 18px;
 
-  position:relative;
+  position: relative;
 
-  border:1.5px solid #d9b76c;
+  border: 1.5px solid #d9b76c;
 
-  background:#fff;
+  background: #fff;
 
   box-shadow:
-    0 10px 26px rgba(0,0,0,.08);
+    0 10px 26px rgba(0, 0, 0, .08);
 }
 
 .carousel-track {
@@ -1663,22 +1746,22 @@ body.content-ready .navbar {
   transition: transform 0.6s ease;
 }
 
-.carousel-img{
+.carousel-img {
 
-  width:100%;
+  width: 100%;
 
-  height:100%;
+  height: 100%;
 
-  object-fit:cover;
+  object-fit: cover;
 
-  object-position:center top;
+  object-position: center top;
 
-  display:block;
+  display: block;
 }
 
-#galeria .arco-base{
+#galeria .arco-base {
 
-  overflow:hidden;
+  overflow: hidden;
 }
 
 .carousel-btn {
@@ -1869,42 +1952,6 @@ body.footer-ready footer.site-footer {
   animation: envelopeDrop 1.2s ease forwards;
 }
 
-/* ========================================================= */
-/* RSVP – SISTEMA UNIFICADO Y CONSISTENTE                    */
-/* ========================================================= */
-
-#rsvp {
-  padding-left: 6vw;
-  padding-right: 6vw;
-  position: relative;
-}
-
-/* ========================================================= */
-/* ARCO RSVP (CONTENEDOR ÚNICO)                              */
-/* ========================================================= */
-
-#rsvp .arco-base {
-  width: 430px;
-  min-height: 680px;
-  margin: 0 auto;
-  padding: 120px 48px 90px;
-
-  background: #fffdfd;
-  border-radius: 260px 260px 0 0;
-  box-shadow: var(--shadow);
-
-  text-align: center;
-  position: relative;
-  display: block;
-}
-
-/* ❌ YA NO SE OCULTA EL ARCO */
-/*
-#rsvp.completed .arco-base {
-  display: none;
-}
-*/
-
 .hidden {
   display: none !important;
 }
@@ -1914,12 +1961,16 @@ body.footer-ready footer.site-footer {
 /* ========================================================= */
 
 .rsvp-container {
+  padding: 0 26px 40px;
+
   max-width: 520px;
   margin: 0 auto;
   text-align: center;
 }
 
-#rsvp.completed #rsvp-form {
+#rsvp.completed .rsvp-text,
+#rsvp.completed .rsvp-options,
+#rsvp.completed .rsvp-note {
   display: none;
 }
 
@@ -2032,13 +2083,6 @@ body.footer-ready footer.site-footer {
 /* ========================================================= */
 
 @media (max-width: 480px) {
-  #rsvp .arco-base {
-    width: 86%;
-    max-width: 320px;
-    min-height: 580px;
-    padding: 100px 28px 70px;
-    border-radius: 200px 200px 0 0;
-  }
 
   .rsvp-text,
   #rsvp-final p {
@@ -2059,10 +2103,6 @@ body.footer-ready footer.site-footer {
   #rsvp {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-  }
-
-  #rsvp .arco-base {
-    padding: 3rem 2rem;
   }
 
   .rsvp-container {
@@ -2109,11 +2149,6 @@ body.footer-ready footer.site-footer {
   #rsvp {
     padding-left: 1.5rem;
     padding-right: 1.5rem;
-  }
-
-  #rsvp .arco-base {
-    padding: 3rem 2rem;
-    max-height: none;
   }
 
   .rsvp-container {
@@ -2881,7 +2916,7 @@ body.footer-ready .music-btn {
 .invite-name {
   position: absolute;
   left: 50%;
-  top: 62%;
+  top: 58%;
   transform: translate(-50%, -210px);
   width: 100%;
   text-align: center;
@@ -2929,7 +2964,7 @@ body.footer-ready .music-btn {
 
   /* NOMBRE */
   .invite-name {
-    transform: translate(-50%, -140px);
+    transform: translate(-50%, -120px);
     font-size: 52px;
     padding: 0 20px;
     width: 100%;
@@ -2937,7 +2972,7 @@ body.footer-ready .music-btn {
 
   /* TEXTO */
   .invite-text {
-    margin-top: 150px;
+    margin-top: 130px;
     width: 85%;
     font-size: 12px;
     line-height: 1.8;
@@ -2947,283 +2982,388 @@ body.footer-ready .music-btn {
 }
 
 /* ========================================================= */
-/* INTRO MUSICAL */
+/* PLAYER */
 /* ========================================================= */
 
-.intro-message-box {
+.xv-divider {
 
-  width: 92vw;
-  max-width: 340px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  min-height: 420px;
+  gap: 18px;
 
-  padding: 95px 38px;
-
-  margin: 0 auto;
-
-  position: relative;
+  margin-bottom: 18px;
 }
 
-/* PNG DECORATIVO */
-.intro-message-box::before {
+.xv-divider .line {
 
-  content: "";
-
-  position: absolute;
-  inset: 0;
-
-  background-image: url("../img/frame-mensaje.png");
-
-  background-repeat: no-repeat;
-  background-position: center;
-
-  background-size: contain;
-
-  transform: scale(1.9, 1.9);
-
-  z-index: 0;
-}
-
-/* TEXTO */
-.intro-message-box p {
-
-  font-size: 16px;
-  line-height: 1.85;
-
-  max-width: 100%;
-
-  margin-bottom: 22px;
-
-  text-align: center;
-
-  position: relative;
-  z-index: 2;
-}
-
-.intro-message-box p:last-child {
-  margin-bottom: 0;
-}
-
-/* ========================================================= */
-/* SECCIÓN */
-/* ========================================================= */
-
-.intro-musical-section {
-
-  position: relative;
-
-  padding: 110px 24px 90px;
-
-  text-align: center;
-
-  overflow: hidden;
+  width: 90px;
+  height: 1px;
 
   background:
-    linear-gradient(to bottom,
-      rgba(255, 255, 255, 0),
-      rgba(255, 248, 239, .85),
-      rgba(255, 255, 255, 1));
-}
-
-/* CONTENEDOR */
-
-.intro-musical-inner {
-
-  width: min(920px, 96vw);
-
-  margin: auto;
-
-  position: relative;
-
-  z-index: 2;
+    linear-gradient(to right,
+      transparent,
+      #c73b57,
+      transparent);
 }
 
 /* ========================================================= */
-/* TÍTULO */
+/* TITLE                                                     */
 /* ========================================================= */
 
 .intro-musical-title {
 
   font-family: "Playfair Display", serif;
 
-  font-size: 30px;
+  font-size: 3rem;
 
-  color: #b08a56;
+  color: #c73b57;
 
-  margin-bottom: 10px;
+  font-weight: 500;
 
-  letter-spacing: 1px;
+  margin: 0;
 }
 
-/* SUBTITLE */
+/* ========================================================= */
+/* SUBTITLE                                                  */
+/* ========================================================= */
 
 .intro-musical-subtitle {
 
-  font-family: "Playfair Display", serif;
+  text-align: center;
 
-  font-style: italic;
+  font-family: "Cormorant Garamond", serif;
 
-  font-size: 15px;
+  font-size: 2rem;
 
-  color: #777;
+  color: #4a4a4a;
 
-  margin-bottom: 24px;
+  margin-bottom: 26px;
 }
 
 /* ========================================================= */
-/* PLAYER */
+/* PLAYER EDITORIAL                                          */
 /* ========================================================= */
 
-.music-player-ui {
+.music-editorial {
 
   display: flex;
   flex-direction: column;
   align-items: center;
 
-  gap: 18px;
+  gap: 14px;
 
-  margin-bottom: 44px;
+  margin-bottom: 24px;
 }
 
-/* ========================================================= */
-/* BOTÓN PLAY */
-/* ========================================================= */
+/* LINEA */
 
-.intro-play-btn {
+.music-line {
 
-  width: 78px;
-  height: 78px;
+  width: 240px;
+  height: 2px;
+
+  background:
+    rgba(199, 59, 87, .28);
+
+  position: relative;
+}
+
+.music-dot {
+
+  width: 12px;
+  height: 12px;
+
+  border-radius: 50%;
+
+  background: #c73b57;
+
+  position: absolute;
+
+  left: 18px;
+  top: 50%;
+
+  transform: translateY(-50%);
+}
+
+/* CONTROLES */
+
+.music-controls {
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 18px;
+}
+
+/* ICONOS */
+
+.music-mini-btn {
+
+  width: 22px;
+  height: 22px;
+
+  object-fit: contain;
+
+  opacity: .92;
+
+  filter:
+    brightness(0) saturate(100%) invert(19%) sepia(78%) saturate(3094%) hue-rotate(334deg) brightness(90%) contrast(91%);
+}
+
+/* SPARKLES */
+
+.music-deco {
+
+  width: 22px;
+
+  opacity: .9;
+
+  filter:
+    brightness(0) saturate(100%) invert(19%) sepia(78%) saturate(3094%) hue-rotate(334deg) brightness(90%) contrast(91%);
+}
+
+/* PLAY */
+
+.music-play-btn {
+
+  width: 74px;
+  height: 74px;
+
+  border: none;
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle at top,
+      #ff6b86,
+      #d6113a);
 
   display: flex;
   justify-content: center;
   align-items: center;
 
-  border: none;
-  border-radius: 50%;
-
   cursor: pointer;
 
-  background:
-    linear-gradient(135deg,
-      #ff4747,
-      #d40b0b);
-
   box-shadow:
-    0 6px 18px rgba(0, 0, 0, .10);
+    0 10px 24px rgba(214, 17, 58, .25);
 
-  transition:
-    transform .35s ease,
-    box-shadow .35s ease;
+  transition: .3s ease;
 }
 
-.intro-play-btn:hover {
+.music-play-btn:hover {
 
-  transform: scale(1.08);
-
-  box-shadow:
-    0 10px 24px rgba(0, 0, 0, .16);
+  transform: scale(1.06);
 }
 
-/* ICONO */
+.music-play-btn img {
 
-.intro-play-btn img {
-
-  width: 34px;
-  height: 34px;
-
-  object-fit: contain;
-
-  pointer-events: none;
+  width: 26px;
+  height: 26px;
 
   filter:
-    brightness(0)
-    invert(1)
-    drop-shadow(0 0 2px rgba(255,255,255,.35));
+    brightness(0) invert(1);
 }
-
-/* ========================================================= */
-/* PROGRESS */
-/* ========================================================= */
 
 #introProgress {
 
-  width: 100%;
+  position: absolute;
 
-  accent-color: #ff4747;
+  opacity: 0;
+
+  pointer-events: none;
+
+  width: 0;
+  height: 0;
 }
 
 /* ========================================================= */
-/* MOBILE */
+/* MENSAJE                                                   */
+/* ========================================================= */
+
+.intro-message-box {
+
+  position: relative;
+
+  width: 95vw;
+
+  max-width: 430px;
+
+  min-height: 520px;
+
+  margin: 0 auto;
+
+  padding:
+    78px 42px 82px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  overflow: visible;
+}
+
+.intro-message-box::before {
+
+  content: "";
+
+  position: absolute;
+
+  left: 50%;
+  top: 0;
+
+  width: 100%;
+  height: 100%;
+
+  transform: translateX(-50%);
+
+  background-image: url("../img/frame-mensaje.png");
+
+  background-size: 100% 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  z-index: 1;
+
+  pointer-events: none;
+}
+
+.intro-message-box p {
+
+  position: relative;
+
+  z-index: 2;
+
+  width: 100%;
+
+  max-width: 280px;
+
+  margin: 0 auto 22px;
+
+  text-align: center;
+
+  font-size: 16px;
+
+  line-height: 1.85;
+}
+
+/* ========================================================= */
+/* MOBILE                                                    */
 /* ========================================================= */
 
 @media(max-width:480px) {
 
-  .intro-musical-section {
+  /* ========================================================= */
+  /* SECTION                                                   */
+  /* ========================================================= */
 
-    padding: 28px 16px 20px;
+  .intro-musical-section {
+    padding: 42px 18px 26px;
   }
 
   .intro-musical-inner {
-
     width: 100%;
   }
 
-  .intro-message-box {
+  /* ========================================================= */
+  /* XV                                                        */
+  /* ========================================================= */
 
-    width: 92vw;
-    max-width: 340px;
-
-    min-height: 500px;
-
-    padding: 85px 42px;
-
-    margin: 0 auto;
-
-    position: relative;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  .xv-divider {
+    gap: 12px;
+    margin-bottom: 14px;
   }
 
-  .intro-message-box::before {
-
-    background-size: 100% 100%;
-
-    background-position: center;
-
-    background-repeat: no-repeat;
-
-    transform: scale(1.4, .9);
+  .xv-divider .line {
+    width: 58px;
   }
+
+  .intro-musical-title {
+    font-size: 2.5rem;
+    line-height: 1;
+  }
+
+  /* ========================================================= */
+  /* SUBTITLE                                                  */
+  /* ========================================================= */
+
+  .intro-musical-subtitle {
+    font-size: 1.1rem;
+    line-height: 1.5;
+    padding: 0 14px;
+    margin-bottom: 22px;
+  }
+
+  /* ========================================================= */
+  /* PLAYER                                                    */
+  /* ========================================================= */
+
+  .music-editorial {
+    gap: 12px;
+    margin-bottom: 20px;
+  }
+
+  .music-line {
+    width: 190px;
+    height: 2px;
+  }
+
+  .music-dot {
+    width: 10px;
+    height: 10px;
+    left: 14px;
+  }
+
+  .music-controls {
+    gap: 14px;
+  }
+
+  .music-mini-btn,
+  .music-deco {
+    width: 20px;
+    height: 20px;
+  }
+
+  .music-play-btn {
+    width: 62px;
+    height: 62px;
+  }
+
+  .music-play-btn img {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* ========================================================= */
+  /* MESSAGE FRAME                                             */
+  /* ========================================================= */
 
   .intro-message-box p {
 
-    font-size: 16px;
+    width: 78%;
 
-    line-height: 1.9;
+    margin-inline: auto;
 
-    max-width: 100%;
+    text-align: center;
+
+    max-width: none;
+
+    font-size: 1.05rem;
+
+    line-height: 1.75;
 
     margin-bottom: 18px;
   }
 
-  /* BOTÓN MOBILE */
 
-  .intro-play-btn {
+  .intro-message-box::before {
 
-    width: 66px;
-    height: 66px;
+    width: 115%;
   }
-
-  .intro-play-btn img {
-
-    width: 28px;
-    height: 28px;
-  }
-
 }
+
 /* ========================================================= */
 /* COUNTDOWN FULLSCREEN                                      */
 /* ========================================================= */
@@ -3570,128 +3710,204 @@ body.footer-ready .music-btn {
 
 }
 
+/* FIX DOBLE SCROLL MOBILE */
+
+html,
+body {
+  height: auto;
+  overflow-x: hidden;
+}
+
+body {
+  overflow-y: auto;
+}
+
+.site-root {
+  overflow: hidden;
+}
+
 /* ========================================================= */
-/* UBICACIÓN ESTILO EDITORIAL                                */
+/* RSVP COVER + CONTENT                                      */
 /* ========================================================= */
 
-.ubicacion-card.editorial {
-  background: transparent;
-  box-shadow: none;
-  border-radius: 0;
+#rsvp .arco-base {
 
-  padding: 0 0 34px;
+  max-width: 430px;
 
-  text-align: center;
+  min-height: 860px;
+
+  padding: 0;
+
+  overflow: hidden;
+}
+
+/* CARD */
+
+#rsvp .rsvp-card {
 
   position: relative;
-}
 
-.ubicacion-header-line {
   width: 100%;
-  height: 1px;
-
-  margin: 0 auto 22px;
-
-  background:
-    linear-gradient(to right,
-      transparent,
-      rgba(180, 140, 80, .45),
-      transparent);
+  min-height: 860px;
 }
 
-.ubicacion-top-row {
+/* ================= COVER ================= */
+
+#rsvp .rsvp-cover {
+
+  position: absolute;
+  inset: 0;
+
+  z-index: 10;
+
+  overflow: hidden;
+
+  transition:
+    opacity .45s ease,
+    visibility .45s ease;
+}
+
+#rsvp .rsvp-cover.hidden {
+
+  opacity: 0;
+  visibility: hidden;
+
+  pointer-events: none;
+}
+
+#rsvp .rsvp-cover-img {
+
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+  object-position: center;
+
+  display: block;
+}
+
+/* CONTENIDO COVER */
+
+#rsvp .rsvp-cover-content {
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 2;
+
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+
+  justify-content: flex-end;
+
   align-items: center;
 
-  margin-bottom: 10px;
+  padding: 100px 26px;
+
+  text-align: center;
 }
 
-.ubicacion-dia {
-  font-family: "Great Vibes", cursive;
-  font-size: 28px;
-  color: #b57d92;
+/* TEXTO */
 
-  text-transform: capitalize;
+.rsvp-cover-mini {
+
+  max-width: 240px;
+
+  font-size: 1.05rem;
+
+  line-height: 1.55;
+
+  margin-bottom: 26px;
+
+  margin-top: 120px;
+
+  color: rgba(255, 255, 255, .96);
+
+  text-shadow:
+    0 3px 10px rgba(0, 0, 0, .35);
 }
 
-.ubicacion-year {
-  font-size: 14px;
-  letter-spacing: 5px;
-  color: #9f8a64;
+/* BOTÓN */
+
+.btn-open-rsvp {
+
+  padding: 14px 28px;
+
+  font-size: 1.05rem;
+
+  border-radius: 999px;
+
+  width: auto;
+
+  min-width: 220px;
+
+  background: rgba(255, 255, 255, .96);
+
+  color: #2f2f2f;
+
+  box-shadow:
+    0 10px 24px rgba(0, 0, 0, .14);
+
+  transition: .3s ease;
 }
 
-.ubicacion-numero {
-  font-family: "Great Vibes", cursive;
-  font-size: 78px;
-  line-height: 1;
+.btn-open-rsvp:hover {
 
-  color: #b26b83;
+  transform: translateY(-2px);
 
-  margin-bottom: 20px;
+  background: white;
 }
 
-.ubicacion-subtitle {
-  font-size: 13px;
-  letter-spacing: 4px;
-  text-transform: uppercase;
+/* ================= CONTENT ================= */
 
-  color: #9a7a2c;
+#rsvp .rsvp-content {
 
-  margin-bottom: 14px;
+  position: absolute;
+  inset: 0;
+
+  z-index: 20;
+
+  background: #fffdfd;
+
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
+
+  padding: 95px 24px 50px;
+
+  overflow-y: auto;
+
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+
+  transition:
+    opacity .45s ease,
+    visibility .45s ease;
 }
 
-.ubicacion-hora {
-  margin-bottom: 18px;
-}
+/* SOLO CUANDO JS AGREGA .visible */
 
-.ubicacion-lugar {
-  font-size: 30px;
-  line-height: 1.2;
+#rsvp .rsvp-content.visible {
 
-  margin-bottom: 16px;
-}
+  opacity: 1;
+  visibility: visible;
 
-.ubicacion-direccion {
-  max-width: 320px;
-  margin: 0 auto 28px;
+  pointer-events: auto;
 }
 
 /* MOBILE */
 
 @media(max-width:480px) {
 
-  .ubicacion-numero {
-    font-size: 60px;
+  #rsvp .arco-base,
+  #rsvp .rsvp-card {
+
+    min-height: 820px;
+
+    border-radius: 190px 190px 0 0;
   }
 
-  .ubicacion-dia {
-    font-size: 24px;
-  }
-
-  .ubicacion-lugar {
-    font-size: 22px;
-  }
-
-  .ubicacion-year {
-    font-size: 12px;
-    letter-spacing: 4px;
-  }
-
-}
-
-/* FIX DOBLE SCROLL MOBILE */
-
-html,
-body{
-  height:auto;
-  overflow-x:hidden;
-}
-
-body{
-  overflow-y:auto;
-}
-
-.site-root{
-  overflow:hidden;
 }

@@ -32,8 +32,39 @@
       }
     });
 
+    /* ================= COVER RSVP ================= */
+
+    const openRSVP = document.getElementById("openRSVP");
+    const rsvpCover = document.querySelector(".rsvp-cover");
+    const rsvpContent = document.getElementById("rsvpContent");
+
+    if (openRSVP && rsvpCover && rsvpContent) {
+
+      openRSVP.addEventListener("click", () => {
+
+        rsvpCover.classList.add("hidden");
+
+        setTimeout(() => {
+
+          rsvpContent.classList.add("visible");
+
+        }, 250);
+
+      });
+
+    }
+
     function showFinal() {
-      formBox.classList.add("hidden");
+
+      formBox.querySelector(".rsvp-text")
+        ?.classList.add("hidden");
+
+      formBox.querySelector(".rsvp-options")
+        ?.classList.add("hidden");
+
+      formBox.querySelector(".rsvp-note")
+        ?.classList.add("hidden");
+
       section.classList.add("completed");
 
       const passLabel = document.getElementById("rsvpPassLabel");
@@ -43,26 +74,52 @@
 
       // 🔹 PASES
       if (data?.rsvp?.pase?.enabled && invitado?.pases) {
-        passLabel.textContent = data.rsvp.pase.label || "Pase para";
+
+        passLabel.textContent =
+          data.rsvp.pase.label || "Pase para";
+
         passValue.textContent =
-          invitado.pases === 1 ? "1 persona" : `${invitado.pases} personas`;
+          invitado.pases === 1
+            ? "1 persona"
+            : `${invitado.pases} personas`;
+
       } else {
+
         passLabel?.closest(".rsvp-pass-item")?.remove();
+
       }
 
       // 🔹 MESA
       if (data?.rsvp?.mesa?.enabled && invitado?.mesa) {
-        tableLabel.textContent = data.rsvp.mesa.label || "Mesa";
-        tableValue.textContent = `Mesa ${invitado.mesa}`;
+
+        tableLabel.textContent =
+          data.rsvp.mesa.label || "Mesa";
+
+        tableValue.textContent =
+          `Mesa ${invitado.mesa} `;
+
       } else {
+
         tableLabel?.closest(".rsvp-pass-item")?.remove();
+
       }
 
-      titleEl.textContent = data.rsvp.final.titulo || "";
-      textEl.innerHTML = data.rsvp.final.texto || "";
-      namesEl.textContent = data.rsvp.final.firma || "";
+      titleEl.textContent =
+        data.rsvp.final.titulo || "";
 
-      finalBox.scrollIntoView({ behavior: "smooth", block: "center" });
+      textEl.innerHTML =
+        data.rsvp.final.texto || "";
+
+      namesEl.textContent =
+        data.rsvp.final.firma || "";
+
+      finalBox.classList.remove("hidden");
+
+      finalBox.scrollIntoView({
+        behavior: "smooth",
+        block: "center"
+      });
+
     }
 
     btnYes?.addEventListener("click", showFinal);

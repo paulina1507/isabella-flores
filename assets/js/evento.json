@@ -25,7 +25,8 @@
     "presentacion": "princesa.svg",
     "vestimenta_icon": "9.svg",
     "galeria": [
-      "2.jpg",
+      "1.jpg",
+      "gallery2.jpg",
       "4.jpg",
       "bg-xv.jpg",
       "hero.png",
@@ -40,8 +41,8 @@
     "volume": 1,
     "fade_in": true,
     "icons": {
-      "play": "play.svg",
-      "pause": "pause.svg"
+      "play": "play.png",
+      "pause": "pause.png"
     }
   },
   "opening": {
@@ -121,7 +122,7 @@
     "title": "XV Años",
     "subtitle": "Presiona el ▶ para escuchar la canción",
     "message": [
-      "Gracias a mis papás y a mi hermana por su amor incondicional y a todas las personas que han sido parte de mi camino.",
+      "Gracias a mis papás y a mi familia por su amor incondicional y a todas las personas que han sido parte de mi camino.",
       "Con gratitud en el corazón, los invito a celebrar mis XV años."
     ]
   },
@@ -295,7 +296,7 @@
       "text": "Tu compañía es lo más importante"
     },
     "galeria": {
-      "enabled": true,
+      "enabled": false,
       "text": "Momentos que forman mi historia"
     },
     "rsvp": {

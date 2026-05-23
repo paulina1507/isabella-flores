@@ -41,9 +41,13 @@
       <h1 class="invite-name" id="invite-name"></h1>
 
       <p class="invite-text">
-        ES UN HONOR INVITARTE A CELEBRAR MIS XV AÑOS.
-        HAZ CLIC EN EL SOBRE PARA ABRIR LA INVITACIÓN
-        Y DESCUBRIR TODOS LOS DETALLES DE ESTE DÍA TAN ESPECIAL.
+        ✨ HOY MI CORAZÓN SE ELEVA EN GRATITUD A DIOS
+        POR CADA PASO QUE ME TRAJO HASTA ESTE MOMENTO.
+
+        ENTRE SUEÑOS, FE Y EMOCIÓN,
+        TE INVITO A CELEBRAR CONMIGO MIS QUINCE AÑOS,
+        UN REGALO DEL CIELO.
+
       </p>
 
     </div>
@@ -77,30 +81,84 @@
 
     <!-- ================= INTRO MUSICAL ================= -->
     <section id="intro-musical" class="intro-musical-section reveal">
+
       <!-- ACUARELAS -->
       <img src="assets/img/acuarela.png" class="acuarela-left" />
       <img src="assets/img/acuarela.png" class="acuarela-right" />
+
       <div class="intro-musical-inner">
 
-        <h2 id="intro-musical-title" class="intro-musical-title"></h2>
+        <!-- XV AÑOS -->
 
-        <p id="intro-musical-subtitle" class="intro-musical-subtitle"></p>
+        <div class="xv-divider">
 
-        <!-- PLAYER -->
-        <div class="music-player-ui">
+          <span class="line"></span>
 
-          <button id="introPlayBtn" class="intro-play-btn">
+          <h2 id="intro-musical-title" class="intro-musical-title">
+          </h2>
 
-            <img id="introPlayIcon" src="assets/img/play.svg" alt="Play">
-
-          </button>
-
-          <input type="range" id="introProgress" min="0" max="100" value="0" />
+          <span class="line"></span>
 
         </div>
 
+        <!-- SUBTITLE -->
+
+        <p id="intro-musical-subtitle" class="intro-musical-subtitle">
+        </p>
+
+        <!-- PLAYER -->
+
+        <div class="music-editorial">
+
+          <!-- línea decorativa -->
+
+          <div class="music-line">
+
+            <span class="music-dot"></span>
+
+          </div>
+
+          <!-- controles -->
+
+          <div class="music-controls">
+
+            <!-- sparkle -->
+
+            <img src="assets/img/8.png" class="music-deco">
+
+            <!-- prev -->
+
+            <img src="assets/img/back.png" class="music-mini-btn">
+
+            <!-- play -->
+
+            <button id="introPlayBtn" class="music-play-btn">
+
+              <img id="introPlayIcon" src="assets/img/play.png" alt="Play">
+
+            </button>
+
+            <!-- next -->
+
+            <img src="assets/img/next.png" class="music-mini-btn">
+
+            <!-- sparkle -->
+
+            <img src="assets/img/9.png" class="music-deco">
+
+          </div>
+
+        </div>
+
+        <!-- progress -->
+
+        <input type="range" id="introProgress" min="0" max="100" value="0" />
+
         <!-- MENSAJE -->
-        <div id="intro-musical-message" class="intro-message-box"></div>
+
+        <div id="intro-musical-message" class="intro-message-box">
+        </div>
+
       </div>
 
     </section>
@@ -350,47 +408,90 @@
       <!-- 🏛️ ARCO -->
       <div class="arco-base">
 
-        <!-- ===== FORMULARIO RSVP ===== -->
-        <div id="rsvp-form" class="rsvp-container reveal">
+        <div class="rsvp-card">
 
-          <div class="editorial-text" data-editorial="rsvp"></div>
-          <h2 id="rsvp-form-title" class="arco-title"></h2>
+          <!-- ================= COVER ================= -->
 
-          <div class="rsvp-guest-name reveal"></div>
+          <div class="rsvp-cover active">
 
-          <p class="rsvp-text reveal"></p>
+            <img src="assets/img/2.png" alt="XV" class="rsvp-cover-img">
 
-          <div class="rsvp-options reveal">
-            <button type="button" class="rsvp-btn yes"></button>
-            <button type="button" class="rsvp-btn no"></button>
-          </div>
+            <div class="rsvp-cover-overlay"></div>
 
-          <p class="rsvp-note reveal"></p>
+            <div class="rsvp-cover-content">
 
-        </div>
+              <p class="rsvp-cover-mini">
+                Nos encantará compartir este momento contigo
+              </p>
 
-        <!-- ===== CONFIRMACIÓN FINAL ===== -->
-        <div id="rsvp-final" class="reveal">
+              <button id="openRSVP" class="btn-open-rsvp">
+                Confirmar asistencia
+              </button>
 
-          <h2 id="rsvp-final-title"></h2>
-
-          <div class="rsvp-guest-name"></div>
-
-          <p id="rsvp-final-text"></p>
-
-          <div class="rsvp-pass-info reveal">
-            <div class="rsvp-pass-item">
-              <span class="label" id="rsvpPassLabel"></span>
-              <strong id="rsvpPassValue"></strong>
             </div>
 
-            <div class="rsvp-pass-item">
-              <span class="label" id="rsvpTableLabel"></span>
-              <strong id="rsvpTableValue"></strong>
-            </div>
           </div>
 
-          <div class="rsvp-sign" id="rsvp-names"></div>
+          <!-- ================= CONTENIDO ================= -->
+          
+          <div id="rsvpContent" class="rsvp-content">
+
+            <!-- ===== FORMULARIO RSVP ===== -->
+
+            <div id="rsvp-form" class="rsvp-container reveal">
+
+              <h2 id="rsvp-form-title"></h2>
+
+              <div class="rsvp-guest-name"></div>
+
+              <p class="rsvp-text"></p>
+
+              <div class="rsvp-options">
+
+                <button class="rsvp-btn yes"></button>
+
+                <button class="rsvp-btn no"></button>
+
+              </div>
+
+              <p class="rsvp-note"></p>
+
+              <!-- ===== CONFIRMACIÓN FINAL ===== -->
+
+              <div id="rsvp-final" class="reveal hidden">
+
+                <h2 id="rsvp-final-title"></h2>
+
+                <p id="rsvp-final-text"></p>
+
+                <div class="rsvp-pass-info reveal">
+
+                  <div class="rsvp-pass-item">
+
+                    <span class="label" id="rsvpPassLabel"></span>
+
+                    <strong id="rsvpPassValue"></strong>
+
+                  </div>
+
+                  <div class="rsvp-pass-item">
+
+                    <span class="label" id="rsvpTableLabel"></span>
+
+                    <strong id="rsvpTableValue"></strong>
+
+                  </div>
+
+                </div>
+
+                <div class="rsvp-sign" id="rsvp-names"></div>
+
+              </div>
+
+            </div>
+
+          </div>
+          
 
         </div>
 
