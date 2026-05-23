@@ -21,16 +21,16 @@
     "value": "Mis XV Años"
   },
   "media": {
-    "hero_background": "hero.png",
+    "hero_background": "hero.jpg",
     "presentacion": "princesa.svg",
     "vestimenta_icon": "9.svg",
     "galeria": [
       "1.jpg",
-      "gallery2.jpg",
+      "2.jpg",
       "4.jpg",
       "bg-xv.jpg",
-      "hero.png",
-      "countdown.png"
+      "hero.jpg",
+      "countdown.jpg"
     ]
   },
   "audio": {
