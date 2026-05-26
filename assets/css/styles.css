@@ -3795,8 +3795,6 @@ body {
 
   object-fit: cover;
 
-  object-position: 70% center;
-
   display: block;
 }
 
@@ -3817,7 +3815,7 @@ body {
 
   align-items: center;
 
-  padding: 100px 26px;
+  padding: 20px 26px;
 
   text-align: center;
 }
