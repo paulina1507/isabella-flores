@@ -86,11 +86,11 @@
 
         <button class="lightbox-close">✕</button>
 
-        <button class="lightbox-nav left">‹</button>
+        <button class="lightbox-nav lightbox-prev">‹</button>
 
         <img src="${slides[currentIndex].src}" alt="">
 
-        <button class="lightbox-nav right">›</button>
+        <button class="lightbox-nav lightbox-next">›</button>
 
       `;
 
@@ -107,7 +107,7 @@
 
           /* anterior */
 
-          overlay.querySelector(".lightbox-nav.left")
+          overlay.querySelector(".lightbox-prev")
             .addEventListener("click", (e) => {
 
               e.stopPropagation();
@@ -121,7 +121,7 @@
 
           /* siguiente */
 
-          overlay.querySelector(".lightbox-nav.right")
+          overlay.querySelector(".lightbox-next")
             .addEventListener("click", (e) => {
 
               e.stopPropagation();
@@ -141,9 +141,13 @@
 
         /* click afuera */
 
-        overlay.addEventListener("click", () => {
+        overlay.addEventListener("click", (e) => {
 
-          overlay.remove();
+          if (e.target === overlay) {
+
+            overlay.remove();
+
+          }
 
         });
 
